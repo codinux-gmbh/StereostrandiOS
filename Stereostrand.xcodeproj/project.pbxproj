@@ -11,6 +11,7 @@
 		36266AFC27E7958D008F3B00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266AFB27E7958D008F3B00 /* ContentView.swift */; };
 		36266AFE27E7958F008F3B00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36266AFD27E7958F008F3B00 /* Assets.xcassets */; };
 		36266B0127E7958F008F3B00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36266B0027E7958F008F3B00 /* Preview Assets.xcassets */; };
+		36266B0927E7A194008F3B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B0827E7A194008F3B00 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		36266AFD27E7958F008F3B00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36266B0027E7958F008F3B00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36266B0727E797A3008F3B00 /* Stereostrand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stereostrand.entitlements; sourceTree = "<group>"; };
+		36266B0827E7A194008F3B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				36266AFB27E7958D008F3B00 /* ContentView.swift */,
 				36266AFD27E7958F008F3B00 /* Assets.xcassets */,
 				36266AFF27E7958F008F3B00 /* Preview Content */,
+				36266B0827E7A194008F3B00 /* AppDelegate.swift */,
 			);
 			path = Stereostrand;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36266B0927E7A194008F3B00 /* AppDelegate.swift in Sources */,
 				36266AFC27E7958D008F3B00 /* ContentView.swift in Sources */,
 				36266AFA27E7958D008F3B00 /* StereostrandApp.swift in Sources */,
 			);
