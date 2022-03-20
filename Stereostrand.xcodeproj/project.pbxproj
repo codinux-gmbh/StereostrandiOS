@@ -12,6 +12,7 @@
 		36266AFE27E7958F008F3B00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36266AFD27E7958F008F3B00 /* Assets.xcassets */; };
 		36266B0127E7958F008F3B00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36266B0027E7958F008F3B00 /* Preview Assets.xcassets */; };
 		36266B0927E7A194008F3B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B0827E7A194008F3B00 /* AppDelegate.swift */; };
+		36266B0E27E7B6AC008F3B00 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B0D27E7B6AC008F3B00 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		36266B0027E7958F008F3B00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36266B0727E797A3008F3B00 /* Stereostrand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stereostrand.entitlements; sourceTree = "<group>"; };
 		36266B0827E7A194008F3B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		36266B0D27E7B6AC008F3B00 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		36266AF827E7958D008F3B00 /* Stereostrand */ = {
 			isa = PBXGroup;
 			children = (
+				36266B0A27E7B653008F3B00 /* view */,
 				36266B0727E797A3008F3B00 /* Stereostrand.entitlements */,
 				36266AF927E7958D008F3B00 /* StereostrandApp.swift */,
 				36266AFB27E7958D008F3B00 /* ContentView.swift */,
@@ -70,6 +73,14 @@
 				36266B0027E7958F008F3B00 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36266B0A27E7B653008F3B00 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				36266B0D27E7B6AC008F3B00 /* WebView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36266B0927E7A194008F3B00 /* AppDelegate.swift in Sources */,
+				36266B0E27E7B6AC008F3B00 /* WebView.swift in Sources */,
 				36266AFC27E7958D008F3B00 /* ContentView.swift in Sources */,
 				36266AFA27E7958D008F3B00 /* StereostrandApp.swift in Sources */,
 			);
