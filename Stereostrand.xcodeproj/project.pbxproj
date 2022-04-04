@@ -13,7 +13,34 @@
 		36266B0127E7958F008F3B00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36266B0027E7958F008F3B00 /* Preview Assets.xcassets */; };
 		36266B0927E7A194008F3B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B0827E7A194008F3B00 /* AppDelegate.swift */; };
 		36266B0E27E7B6AC008F3B00 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B0D27E7B6AC008F3B00 /* WebView.swift */; };
+		36266B1627FA4861008F3B00 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B1527FA4861008F3B00 /* NotificationService.swift */; };
+		36266B1A27FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 36266B1327FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		36266B2127FA4919008F3B00 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 36266B2027FA4919008F3B00 /* OneSignal */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36266B1827FA4861008F3B00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36266AEE27E7958D008F3B00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36266B1227FA4861008F3B00;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		36266B1E27FA4861008F3B00 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				36266B1A27FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		36266AF627E7958D008F3B00 /* Stereostrand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stereostrand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +51,22 @@
 		36266B0727E797A3008F3B00 /* Stereostrand.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Stereostrand.entitlements; sourceTree = "<group>"; };
 		36266B0827E7A194008F3B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36266B0D27E7B6AC008F3B00 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		36266B1327FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		36266B1527FA4861008F3B00 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		36266B1727FA4861008F3B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36266B2227FA49F3008F3B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		36266AF327E7958D008F3B00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36266B2127FA4919008F3B00 /* OneSignal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36266B1027FA4861008F3B00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				36266AF827E7958D008F3B00 /* Stereostrand */,
+				36266B1427FA4861008F3B00 /* OneSignalNotificationServiceExtension */,
 				36266AF727E7958D008F3B00 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				36266AF627E7958D008F3B00 /* Stereostrand.app */,
+				36266B1327FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +97,7 @@
 		36266AF827E7958D008F3B00 /* Stereostrand */ = {
 			isa = PBXGroup;
 			children = (
+				36266B2227FA49F3008F3B00 /* Info.plist */,
 				36266B0A27E7B653008F3B00 /* view */,
 				36266B0727E797A3008F3B00 /* Stereostrand.entitlements */,
 				36266AF927E7958D008F3B00 /* StereostrandApp.swift */,
@@ -83,6 +125,15 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		36266B1427FA4861008F3B00 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				36266B1527FA4861008F3B00 /* NotificationService.swift */,
+				36266B1727FA4861008F3B00 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,15 +144,37 @@
 				36266AF227E7958D008F3B00 /* Sources */,
 				36266AF327E7958D008F3B00 /* Frameworks */,
 				36266AF427E7958D008F3B00 /* Resources */,
+				36266B1E27FA4861008F3B00 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36266B1927FA4861008F3B00 /* PBXTargetDependency */,
+			);
+			name = Stereostrand;
+			packageProductDependencies = (
+				36266B2027FA4919008F3B00 /* OneSignal */,
+			);
+			productName = Stereostrand;
+			productReference = 36266AF627E7958D008F3B00 /* Stereostrand.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36266B1227FA4861008F3B00 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36266B1B27FA4861008F3B00 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				36266B0F27FA4861008F3B00 /* Sources */,
+				36266B1027FA4861008F3B00 /* Frameworks */,
+				36266B1127FA4861008F3B00 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Stereostrand;
-			productName = Stereostrand;
-			productReference = 36266AF627E7958D008F3B00 /* Stereostrand.app */;
-			productType = "com.apple.product-type.application";
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 36266B1327FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -116,6 +189,9 @@
 					36266AF527E7958D008F3B00 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
+					36266B1227FA4861008F3B00 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 36266AF127E7958D008F3B00 /* Build configuration list for PBXProject "Stereostrand" */;
@@ -127,11 +203,15 @@
 				Base,
 			);
 			mainGroup = 36266AED27E7958D008F3B00;
+			packageReferences = (
+				36266B1F27FA4919008F3B00 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
 			productRefGroup = 36266AF727E7958D008F3B00 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				36266AF527E7958D008F3B00 /* Stereostrand */,
+				36266B1227FA4861008F3B00 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -143,6 +223,13 @@
 			files = (
 				36266B0127E7958F008F3B00 /* Preview Assets.xcassets in Resources */,
 				36266AFE27E7958F008F3B00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36266B1127FA4861008F3B00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +247,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		36266B0F27FA4861008F3B00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36266B1627FA4861008F3B00 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36266B1927FA4861008F3B00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36266B1227FA4861008F3B00 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 36266B1827FA4861008F3B00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		36266B0227E7958F008F3B00 /* Debug */ = {
@@ -282,6 +385,7 @@
 		36266B0527E7958F008F3B00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Stereostrand/Stereostrand.entitlements;
@@ -291,6 +395,7 @@
 				DEVELOPMENT_TEAM = 7WVYN7QA7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Stereostrand/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,7 +406,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.codinux.Stereostrand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -313,6 +418,7 @@
 		36266B0627E7958F008F3B00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Stereostrand/Stereostrand.entitlements;
@@ -322,6 +428,7 @@
 				DEVELOPMENT_TEAM = 7WVYN7QA7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Stereostrand/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,9 +439,59 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.codinux.Stereostrand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		36266B1C27FA4861008F3B00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7WVYN7QA7Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.codinux.Stereostrand.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		36266B1D27FA4861008F3B00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7WVYN7QA7Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.codinux.Stereostrand.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,7 +519,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		36266B1B27FA4861008F3B00 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36266B1C27FA4861008F3B00 /* Debug */,
+				36266B1D27FA4861008F3B00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		36266B1F27FA4919008F3B00 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36266B2027FA4919008F3B00 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36266B1F27FA4919008F3B00 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36266AEE27E7958D008F3B00 /* Project object */;
 }

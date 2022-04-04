@@ -1,10 +1,11 @@
 import SwiftUI
+import OneSignal
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        self.registerForPushNotifications()
+        self.registerForPushNotifications(launchOptions)
         
         return true
     }
@@ -22,27 +23,16 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     
     
-    func registerForPushNotifications() {
-        let notificationCenter = UNUserNotificationCenter.current()
+    func registerForPushNotifications(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]?) {
+       // Remove this method to stop OneSignal Debugging
+//       OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
         
-        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, _ in
-            print("Permission granted? \(granted).")
-            
-            if granted {
-                self?.registerForRemoteNotifications()
-            }
-        }
-    }
-    
-    func registerForRemoteNotifications() {
-      UNUserNotificationCenter.current().getNotificationSettings { settings in
-          print("Notification settings: \(settings)")
-          
-          guard settings.authorizationStatus == .authorized else { return }
-          DispatchQueue.main.async {
-              UIApplication.shared.registerForRemoteNotifications()
-          }
-      }
+       OneSignal.initWithLaunchOptions(launchOptions)
+       OneSignal.setAppId("838a7c86-0f57-4a53-baa2-6c37f16d3a67")
+        
+       OneSignal.promptForPushNotifications(userResponse: { accepted in
+         print("User accepted notification: \(accepted)")
+       })
     }
     
 }
