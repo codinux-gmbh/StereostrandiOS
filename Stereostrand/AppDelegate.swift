@@ -7,6 +7,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private let reachability = try! Reachability()
     
+    private var displayedNetworkConnectionNotAvailableMessage: UIAlertController? = nil
+    
     var appState = AppState()
     
     
@@ -25,17 +27,40 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     private func networkConnectionNotAvailable(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // this is called right at startup, window is not created then -> wait some time
+            self.showNetworkConnectionNotAvailableMessage()
+        }
+        
         reachability.whenReachable = { reachability in
             print("Network is now reachable")
             
             self.reachability.stopNotifier()
             
+            self.appState.webpageHasBeenUpdated()
+            
             self.initApplicationWithNetworkConnection(launchOptions)
             
-            self.appState.webpageHasBeenUpdated()
+            self.displayedNetworkConnectionNotAvailableMessage?.dismiss(animated: true, completion: nil)
         }
         
         try? self.reachability.startNotifier()
+    }
+    
+    private func showNetworkConnectionNotAvailableMessage() {
+        let alertViewController = UIAlertController(title: "Keine Netwerkverbindung", message: "Um die Stereostrand App nutzen zu können verbinden Sie sich bitte mit dem Internet", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
+            self.displayedNetworkConnectionNotAvailableMessage = nil
+        }
+        alertViewController.addAction(okAction)
+        
+        self.getRootViewController()?.present(alertViewController, animated: true, completion: nil)
+        
+        self.displayedNetworkConnectionNotAvailableMessage = alertViewController
+    }
+    
+    private func getRootViewController() -> UIViewController? {
+        return UIApplication.shared.windows.first?.rootViewController
     }
     
     private func initApplicationWithNetworkConnection(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
