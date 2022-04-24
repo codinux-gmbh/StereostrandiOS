@@ -1,13 +1,35 @@
 import SwiftUI
 import OneSignal
+import Reachability
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
+    private let reachability = try! Reachability()
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        self.registerForPushNotifications(launchOptions)
+        self.initApplication(launchOptions)
         
         return true
+    }
+    
+    private func initApplication(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
+        if reachability.connection == .unavailable {
+            reachability.whenReachable = { reachability in
+                print("Network is now reachable")
+                self.reachability.stopNotifier()
+                
+                self.initApplicationWithInternetConnection(launchOptions)
+            }
+            try? self.reachability.startNotifier()
+        } else {
+            self.initApplicationWithInternetConnection(launchOptions)
+        }
+    }
+    
+    private func initApplicationWithInternetConnection(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
+        self.registerForPushNotifications(launchOptions)
     }
     
     

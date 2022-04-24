@@ -16,6 +16,7 @@
 		36266B1627FA4861008F3B00 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36266B1527FA4861008F3B00 /* NotificationService.swift */; };
 		36266B1A27FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 36266B1327FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		36266B2127FA4919008F3B00 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 36266B2027FA4919008F3B00 /* OneSignal */; };
+		36CB90B92815FB0600DE5A7F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 36CB90B82815FB0600DE5A7F /* Reachability */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36266B2127FA4919008F3B00 /* OneSignal in Frameworks */,
+				36CB90B92815FB0600DE5A7F /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +156,7 @@
 			name = Stereostrand;
 			packageProductDependencies = (
 				36266B2027FA4919008F3B00 /* OneSignal */,
+				36CB90B82815FB0600DE5A7F /* Reachability */,
 			);
 			productName = Stereostrand;
 			productReference = 36266AF627E7958D008F3B00 /* Stereostrand.app */;
@@ -205,6 +208,7 @@
 			mainGroup = 36266AED27E7958D008F3B00;
 			packageReferences = (
 				36266B1F27FA4919008F3B00 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				36CB90B72815FB0600DE5A7F /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = 36266AF727E7958D008F3B00 /* Products */;
 			projectDirPath = "";
@@ -539,6 +543,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		36CB90B72815FB0600DE5A7F /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -546,6 +558,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 36266B1F27FA4919008F3B00 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignal;
+		};
+		36CB90B82815FB0600DE5A7F /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36CB90B72815FB0600DE5A7F /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
