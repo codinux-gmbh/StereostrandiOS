@@ -9,6 +9,7 @@ struct StereostrandApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(self.delegate.appState)
         }
     }
 }
