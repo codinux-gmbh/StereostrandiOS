@@ -18,21 +18,27 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private func initApplication(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
         if reachability.connection == .unavailable {
-            reachability.whenReachable = { reachability in
-                print("Network is now reachable")
-                self.reachability.stopNotifier()
-                
-                self.initApplicationWithInternetConnection(launchOptions)
-                
-                self.appState.webpageHasBeenUpdated()
-            }
-            try? self.reachability.startNotifier()
+            self.networkConnectionNotAvailable(launchOptions)
         } else {
-            self.initApplicationWithInternetConnection(launchOptions)
+            self.initApplicationWithNetworkConnection(launchOptions)
         }
     }
     
-    private func initApplicationWithInternetConnection(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
+    private func networkConnectionNotAvailable(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
+        reachability.whenReachable = { reachability in
+            print("Network is now reachable")
+            
+            self.reachability.stopNotifier()
+            
+            self.initApplicationWithNetworkConnection(launchOptions)
+            
+            self.appState.webpageHasBeenUpdated()
+        }
+        
+        try? self.reachability.startNotifier()
+    }
+    
+    private func initApplicationWithNetworkConnection(_ launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) {
         self.registerForPushNotifications(launchOptions)
     }
     
