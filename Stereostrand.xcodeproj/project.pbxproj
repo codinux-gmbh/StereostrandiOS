@@ -17,6 +17,7 @@
 		36266B1A27FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 36266B1327FA4861008F3B00 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		36266B2127FA4919008F3B00 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 36266B2027FA4919008F3B00 /* OneSignal */; };
 		36CB90B92815FB0600DE5A7F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 36CB90B82815FB0600DE5A7F /* Reachability */; };
+		36CB90BB2816061200DE5A7F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CB90BA2816061200DE5A7F /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		36266B1527FA4861008F3B00 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		36266B1727FA4861008F3B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36266B2227FA49F3008F3B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		36CB90BA2816061200DE5A7F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				36266AFD27E7958F008F3B00 /* Assets.xcassets */,
 				36266AFF27E7958F008F3B00 /* Preview Content */,
 				36266B0827E7A194008F3B00 /* AppDelegate.swift */,
+				36CB90BA2816061200DE5A7F /* AppState.swift */,
 			);
 			path = Stereostrand;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36266B0927E7A194008F3B00 /* AppDelegate.swift in Sources */,
+				36CB90BB2816061200DE5A7F /* AppState.swift in Sources */,
 				36266B0E27E7B6AC008F3B00 /* WebView.swift in Sources */,
 				36266AFC27E7958D008F3B00 /* ContentView.swift in Sources */,
 				36266AFA27E7958D008F3B00 /* StereostrandApp.swift in Sources */,

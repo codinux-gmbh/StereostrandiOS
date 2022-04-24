@@ -7,6 +7,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     private let reachability = try! Reachability()
     
+    var appState = AppState()
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         self.initApplication(launchOptions)
@@ -21,6 +23,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 self.reachability.stopNotifier()
                 
                 self.initApplicationWithInternetConnection(launchOptions)
+                
+                self.appState.webpageHasBeenUpdated()
             }
             try? self.reachability.startNotifier()
         } else {
