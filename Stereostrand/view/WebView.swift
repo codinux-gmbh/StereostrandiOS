@@ -6,6 +6,8 @@ struct WebView: UIViewRepresentable {
     
     let url = "https://www.stereostrand.de/"
     
+    private let DetectiOSAppUserAgentStringEnd = ";StSt-WebView"
+    
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
@@ -17,7 +19,13 @@ struct WebView: UIViewRepresentable {
         
         webView.navigationDelegate = context.coordinator
         
-        webView.load(URLRequest(url: URL(string: self.url)!))
+        webView.evaluateJavaScript("navigator.userAgent") { (result, error) in
+            // so that frontend can detect iOS App and hide the "Tickets" navigation menu item
+            let userAgent = String(describing: (result ?? "")) + DetectiOSAppUserAgentStringEnd
+            webView.customUserAgent = userAgent
+            
+            webView.load(URLRequest(url: URL(string: self.url)!))
+        }
         
         return webView
     }
